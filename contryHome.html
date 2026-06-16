@@ -6,10 +6,12 @@
     <link rel="stylesheet" href="/css/style.css">
     <style>
         #content{
-            margin-top: 50px;
+            padding: 10px;
+            padding-top: 60px;
             display: flex;
             width: 100%;
             height: 100%;
+            gap: 10px;
         }
         div:has(ul){
             width: fit-content;
@@ -19,13 +21,16 @@
             display: flex;
             flex-direction: column;
             height: 100%;
-            width: 10vw;
+            width: fit-content;
+            gap: 5px;
         }
         .list>*{
             flex: 1;
-            height: 15px;
+            height: auto;
             background: none;
             padding: 0;
+            background-color: #062173;
+            border-radius: 50%;
         }
         img{
             height: 90px;
@@ -33,6 +38,19 @@
         }
         #pv-btn{
             width: 100%;
+            height: 9%;
+            margin: 0.5% 0;
+        }
+        #contry{
+            width: 100%;
+        }
+        .container{
+            height: 90%;
+            padding: 0;
+        }
+        .slide-box{
+            height: 80%;
+            aspect-ratio: 16/9;
         }
     </style>
 </head>
@@ -48,13 +66,28 @@
             <button><img class="logo" src="/rsc/나라/나타.png"></button>
             <button><img class="logo" src="/rsc/나라/스네즈나야.png"></button>
         </div>
-        <div>
-            <div class="container">
-                <iframe src=""></iframe>
+        <div id="contry">
+            <div id="contry-content" class="container sort-center">
+                <h1>티바트</h1>
+                <div class="slide-box">
+                    <div class="slide-track">
+                        <img src="/rsc/슬라이드/일러2.jpg">
+                        <img src="/rsc/슬라이드/일러3.jpg">
+                        <img src="/rsc/슬라이드/일러4.jpg">
+                    </div>
+                </div>
+                <p style="text-align: center;">
+                    7가지 원소가 살아 숨 쉬는 판타지 세계 티바트.<br>
+                    아주 오래 전, 사람들은 신령에 대한 신앙을 통해 원소의 힘을 부여받아 황야를 개척하고 나라를 건설했다.<br>
+                    500년 전, 오래된 나라가 멸망 후 천지가 개벽하고….<br>
+
+                    대륙을 휩쓸던 재난이 멈췄지만, 사람들이 고대하던 평화는 오지 않았다
+                </p>
             </div>
             <button type="button" id="pv-btn">pv보러가기</button>
         </div>
     </div>
     <script src="/js/header.js"></script>
+    <script src="/slide/slide.js"></script>
 </body>
 </html>
