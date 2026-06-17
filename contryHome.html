@@ -65,36 +65,50 @@
             margin: 15px 0;
             border: white solid;
         }
+        #contry-content{
+            position: relative;
+        }
+        #stc1, #stc2{
+            position: absolute;
+            height: auto;
+        }
+        #stc1{
+            bottom: 100px;
+            left: 100px;
+            width: 200px;
+        }
+        #stc2{
+            bottom: 110px;
+            right: 150px;
+            width: 150px;
+        }
+
     </style>
 </head>
 <body>
     <iframe src="menu.html" class="menu"></iframe>
     <div id="content">
         <div class="list">
+            <button onclick="changeContry('티바트')" tooltip="티바트" class="logo"><img src="/rsc/나라/티바트.png"></button>
             <button onclick="changeContry('몬드')" tooltip="몬드" class="logo"><img src="/rsc/나라/몬드.png"></button>
-            <button tooltip="리월" class="logo"><img src="/rsc/나라/리월.png"></button>
-            <button tooltip="이나즈마" class="logo"><img src="/rsc/나라/이나즈마.png"></button>
-            <button tooltip="수메르" class="logo"><img src="/rsc/나라/수메르.png"></button>
-            <button tooltip="폰타인" class="logo"><img src="/rsc/나라/폰타인.png"></button>
-            <button tooltip="나타" class="logo"><img src="/rsc/나라/나타.png"></button>
-            <button tooltip="스네즈나야" class="logo"><img src="/rsc/나라/스네즈나야.png"></button>
+            <button onclick="changeContry('리월')" tooltip="리월" class="logo"><img src="/rsc/나라/리월.png"></button>
+            <button onclick="changeContry('이나즈마')" tooltip="이나즈마" class="logo"><img src="/rsc/나라/이나즈마.png"></button>
+            <button onclick="changeContry('수메르')" tooltip="수메르" class="logo"><img src="/rsc/나라/수메르.png"></button>
+            <button onclick="changeContry('폰타인')" tooltip="폰타인" class="logo"><img src="/rsc/나라/폰타인.png"></button>
+            <button onclick="changeContry('나타')" tooltip="나타" class="logo"><img src="/rsc/나라/나타.png"></button>
+            <button onclick="changeContry('스네즈나야')" tooltip="스네즈나야" class="logo"><img src="/rsc/나라/스네즈나야.png"></button>
         </div>
         <div id="contry">
             <div id="contry-content" class="container sort-center">
                 <h1>티바트</h1>
                 <div class="slide-box">
                     <div class="slide-track">
-                        <img src="/rsc/슬라이드/일러2.jpg">
-                        <img src="/rsc/슬라이드/일러3.jpg">
-                        <img src="/rsc/슬라이드/일러4.jpg">
+                        <img>
                     </div>
                 </div>
-                <p style="text-align: center;">
-                    7가지 원소가 살아 숨 쉬는 판타지 세계 티바트.<br>
-                    아주 오래 전, 사람들은 신령에 대한 신앙을 통해 원소의 힘을 부여받아 황야를 개척하고 나라를 건설했다.<br>
-                    500년 전, 오래된 나라가 멸망 후 천지가 개벽하고….<br>
-                    대륙을 휩쓸던 재난이 멈췄지만, 사람들이 고대하던 평화는 오지 않았다
-                </p>
+                <p style="text-align: center;"></p>
+                <img id="stc1" class="logo">
+                <img id="stc2" class="logo">
             </div>
             <button type="button" id="pv-btn">pv보러가기</button>
         </div>
@@ -105,22 +119,34 @@
     <script src="/slide/slide.js"></script>
     <script>
         const contryContent={
-            "몬드":"티바트 대륙 북동쪽에 위치한 자유의 도시. \n산과 드넓은 평원 사이로 민들레 향기를 가득 머금은 자유의 바람이 \n시드르 호수 위로 불며 호수 중앙의 섬에 위치한 몬드성에 \n바람 신 바르바토스의 축복과 은혜를 가져다준다.",
-            "리월":"",
-            "이나즈마":"",
-            "수메르":"",
-            "폰타인":"",
-            "나타":"",
-            "스네즈나야":""
+            "티바트":"7가지 원소와 7가지 나라, 일곱 신이 있는 세계 티바트.\n아주 오래 전, 사람들은 신령에 대한 신앙을 통해 원소의 힘을 부여받아 황야를 개척하고 나라를 건설했다.\n500년 전, 오래된 나라가 멸망 후 천지가 개벽하고….\n대륙을 휩쓸던 재난이 멈췄지만, 사람들이 고대하던 평화는 오지 않았다",
+            "몬드":"티바트 대륙 북동쪽에 위치한 자유의 도시. \n산과 드넓은 평원 사이로 민들레 향기를 가득 머금은 자유의 바람이 \n시드르 호수 위로 불며 호수 중앙의 섬에 위치한 몬드성에 바람 신 바르바토스의 축복과 은혜를 가져다준다.",
+            "리월":"티바트 대륙 동쪽에 위치한 풍요로운 항구 도시. \n우뚝 솟아있는 산기슭과 석림, 생기 넘치는 강가와 드넓은 평원이 만든 리월의 다양한 지형은 계절마다 다채로운 풍경을 보여준다.\n산과 돌이 이뤄낸 장관 속엔 얼마나 많은 바위 신의 오랜 선물들이 사람들을 기다리고 있을까?",
+            "이나즈마":"티바트 대륙 극동에 위치한 봉쇄된 제도 \n끝없는 뇌우를 뚫고 벚꽃의 가호가 서린 열도에 들어서면 둘러싸인 사취\n 우뚝 솟은 절벽 그리고 그윽한 산속에서 위대하신 나루카미 쇼군이 추구하는 영원을 확인할 수 있다.",
+            "수메르":"티바트 대륙 중서부에 위치한 학술의 도시.\n우거진 우림과 황량한 사막이 공존하는 신비한 나라. 무수한 지혜의 열매가 이곳에서 자라나고 묻혔다. \n숲을 가로질러 학술의 계단을 오르든 사막 깊은 곳에서 적토의 유적을 발굴하든\n 먼 곳에서 온 여행자는 모두 이곳에서 귀중한 지혜를 얻을 수 있을 것이다.",
+            "폰타인":"티바트 중부에 있는 지상의 바다.\n물의 흐름을 따라 들판과 깊은 숲, 모래바다를 지나면 대륙의 물줄기가 시작된 땅에 도착한다. \n폭포 정상과 고원 위에 위치한 바다 도시의 깊은 곳에서, 들어본 적 없는 이야기와 오래전에 잊힌 전설이\n 물속에 가라앉아 사라져 버린 나라처럼 여행자를 갈망하고 있다.",
+            "나타":"티바트 대륙 서부에 위치한 맹세의 나라.\n불빛의 인도를 따라 협곡과 계곡을 지나면 펼쳐지는 그곳은 찬란한 횃불이 타오르는 땅이자, 만인의 불꽃이 하나 되는 곳이다.\n용들이 활보하는 드넓은 평원에서 어둠에 맞서는 용사들과 함께 고대 전쟁의 끝을 지켜보도록 하자.",
+            "스네즈나야":"스네즈나야 최초의 도시 키테시가 세워진 그해부터\n 폐하께서 무한한 은혜와 자비로 인간을 용서해 신민으로 받아들이고 스네즈나야성으로 천도하기까지\n요정 선조의 풍습을 본떠 지은 이 제국의 수도는 줄곧 동토를 다스리는 권력의 중심이었다."
         }
         const contryImgs={
             "몬드":["몬드배경1.jpg","몬드배경2.jpg","몬드배경3.jpg","몬드배경4.jpg","몬드배경5.jpg","몬드배경6.jpg","몬드배경7.jpg","몬드배경8.jpg","몬드배경9.jpg","몬드배경10.jpg"],
-            "리월":[],
-            "이나즈마":[],
-            "수메르":[],
-            "폰타인":[],
-            "나타":[],
-            "스네즈나야":[]
+            "티바트":["티바트배경1.jpg","티바트배경2.jpg","티바트배경3.jpg","티바트배경4.jpg","티바트배경5.jpg","티바트배경6.jpg"],
+            "리월":["리월배경1.jpg","리월배경2.jpg","리월배경3.jpg","리월배경4.jpg","리월배경5.jpg","리월배경6.jpg","리월배경7.jpg"],
+            "이나즈마":["이나즈마배경1.jpg","이나즈마배경2.jpg","이나즈마배경3.jpg","이나즈마배경4.jpg","이나즈마배경5.jpg","이나즈마배경6.jpg","이나즈마배경7.jpg"],
+            "수메르":["수메르배경1.jpg","수메르배경2.jpg","수메르배경3.jpg","수메르배경4.jpg","수메르배경5.jpg","수메르배경6.jpg","수메르배경7.jpg"],
+            "폰타인":["폰타인배경1.jpg","폰타인배경2.jpg","폰타인배경3.jpg","폰타인배경4.jpg","폰타인배경5.jpg","폰타인배경6.jpg","폰타인배경7.jpg"],
+            "나타":["나타배경1.jpg","나타배경2.jpg","나타배경3.jpg","나타배경4.jpg","나타배경5.jpg","나타배경6.jpg","나타배경7.jpg"],
+            "스네즈나야":["스네즈나야배경1.jpg"]
+        }
+        const contryUrl={
+            "티바트":"https://youtu.be/aCNNqHEMA9A?si=0leGvVLDdKgaKIfC",
+            "몬드":"https://youtu.be/BMwPlyZ31GQ?si=jN2SBc-wv7bfwlNQ",
+            "리월":"https://youtu.be/OKirChM0ujQ?si=g3h1I4-RsSQOXF5N",
+            "이나즈마":"https://youtu.be/r2KigQV40i4?si=acRiIPGnmO09OEfD",
+            "수메르":"https://youtu.be/3oHEPzIHY9I?si=E3uQSbkbqOhZw7rk",
+            "폰타인":"https://youtu.be/bl6ttHXCel4?si=rAlzmAaZ-AutXCcW",
+            "나타":"https://youtu.be/pxAaYkX1ds8?si=DdmRZlVRCUxrJi5F",
+            "스네즈나야":"https://youtu.be/eo2CtzUs-mU?si=RfOSVNmtLyu2yt5E"
         }
         function changeContry(contry){
             document.querySelector("#contry-content>h1").innerText=contry
@@ -130,7 +156,17 @@
                 imgs.push(`/rsc/나라/${contry}/${contryImgs[contry][i]}`)
             }
             changeImages(imgs)
+            for (let element of document.querySelectorAll("button[tooltip]")) {
+                element.style.border="0px"
+            }
+            document.querySelector(`button[tooltip="${contry}"]`).style.border="white solid"
+            document.querySelector("#pv-btn").addEventListener('click',()=>{
+                window.location.href=contryUrl[contry]
+            })
+            document.querySelector("#stc1").src=`/rsc/나라/${contry}/${contry}stc1.png`
+            document.querySelector("#stc2").src=`/rsc/나라/${contry}/${contry}stc2.png`
         }
+        changeContry("티바트")
     </script>
 </body>
 </html>

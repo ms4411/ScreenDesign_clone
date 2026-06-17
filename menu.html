@@ -27,7 +27,7 @@
             margin: auto;
             z-index: 1;
         }
-        #menu-list>button{
+        #menu-list>a{
             flex: 1;
             flex-direction: row;
             height: 100%;
@@ -37,7 +37,7 @@
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
-        #menu-list>button:last-child{
+        #menu-list>a:last-child{
             border-right: none;
         }
         #home-logo{
@@ -55,7 +55,7 @@
             margin-bottom: 2%;
             box-sizing: content-box;
         }
-        button>p{
+        a>p{
             font-size: large;
             text-shadow: #062173 1px 1px;
         }
@@ -69,9 +69,9 @@
 <body>
     <a href="/home.html" target="_top" id="home-logo"><img src="/rsc/logo.png" class="logo"></a>
     <div id="menu-list">
-        <button type="button" class="sort-center hover-style"><div class="box"><img src="/rsc/메뉴바/나라.png" class="logo"></div><p>나라</p></button>
-        <button type="button" class="sort-center hover-style"><div class="box"><img src="/rsc/메뉴바/캐릭터.png" class="logo"></div><p>캐릭터</p></button>
-        <button type="button" class="sort-center hover-style"><div class="box"><img src="/rsc/메뉴바/뽑기.png" class="logo"></div><p>뽑기</p></button>
+        <a href="/contryHome.html" target="_top" class="sort-center hover-style"><div class="box"><img src="/rsc/메뉴바/나라.png" class="logo"></div><p>나라</p></a>
+        <a target="_top" class="sort-center hover-style"><div class="box"><img src="/rsc/메뉴바/캐릭터.png" class="logo"></div><p>캐릭터</p></a>
+        <a target="_top" class="sort-center hover-style"><div class="box"><img src="/rsc/메뉴바/뽑기.png" class="logo"></div><p>뽑기</p></a>
     </div>
     <button id="acc-btn" class="btn-style1">로그인</button>
 </body>
